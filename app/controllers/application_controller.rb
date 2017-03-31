@@ -44,6 +44,8 @@ class ApplicationController < ActionController::Base
         end
 
         @avgStars = (numStars/@numReviewsParam.to_f).round(1)
+      else
+        @infoMsg = "Could not find the restaurant."
       end
     end
   end

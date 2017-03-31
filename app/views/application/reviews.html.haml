@@ -11,6 +11,10 @@
 
 %br
 
+- if @infoMsg.present?
+  .alert.alert-info
+    = @infoMsg
+
 - if !@restReviews.empty?
   %li.list-group-item
     %h5= "Name: #{@restName}"
