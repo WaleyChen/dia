@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Dia</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <div class='container'>
+      <div class='col-md-3'></div>
+      <div class='col-md-6 text-center'>
+
+        <nav class='navbar navbar-default'>
+          <div class='container-fluid'>
+            <div class='col-md-4'></div>
+            <div class='col-md-4'>
+              <h4>NYC Pizza Reviews</h4>
+            </div>
+            <div class='col-md-4'></div>
+          </div>
+        </nav>
+        <ul class='list-group'>
+          <%= yield %>
+        <ul>
+
+      </div>
+      <div class='col-md-3'></div>
+  </body>
+</html>

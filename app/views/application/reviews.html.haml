@@ -1,0 +1,23 @@
+- if @errMsg.present?
+  .alert.alert-danger
+    = @errMsg
+
+= form_for(:reviews, url: reviews_url, method: :get, :html => {:class => "form-horizontal"}) do |f|
+  = f.text_field :restName, :value => @restNameParam, :placeholder => "Name of a NYC Pizza Restaurant", :class => "form-control"
+  %br
+  = f.select :numReviews, options_for_select([*1..9], @numReviewsParam), { :prompt => "Select Number of Reviews" }, :class => "form-control"
+  %br
+  = f.submit "Get Reviews", :class => "btn btn-default"
+
+%br
+
+- if !@restReviews.empty?
+  %li.list-group-item
+    %h5= "Name: #{@restName}"
+    = "Avg Stars: #{@avgStars}/5.0"
+
+  - @restReviews.each do |review|
+    %li.list-group-item
+      = "#{review["stars"]}/5 Stars"
+      %br
+      = review["text"]
